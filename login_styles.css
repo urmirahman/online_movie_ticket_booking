@@ -1,0 +1,161 @@
+body{
+	background: url(background.jpg);
+	background-size: 100% 100%;
+	margin: 0;
+	padding: 0;
+
+}
+
+.header{
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+     -moz-background-size:cover;
+    -o-background-size:cover;
+    -webkit-background:cover;
+}
+
+.head{
+	text-align: center;
+	color: indianred;
+}
+
+.head2{
+	text-align: center;
+	color: #7FB3D5;
+}
+
+.new_account p{
+	position: absolute;
+	color: #7FB3D5;
+}
+
+.box .new_account{
+	
+}
+
+.box{
+	position: fixed;
+	top: 100px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 10px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.1);
+	border-radius: 10px;
+     -moz-background-size:cover;
+    -o-background-size:cover;
+    -webkit-background:cover;
+	
+}
+
+.box .inputbox{
+	position: relative;
+}
+
+.box .inputbox input{
+	width: 100%;
+	padding: 20px 0;
+	font-size: 20px;
+	color: #fff;
+	margin-bottom: 30px;
+	border: none;
+	border: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+
+.box .inputbox label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px 0;
+	font-size: 25px;
+	color: #fff;
+	pointer-events: none;
+	transition: .5s;
+}
+
+.box .inputbox input:focus ~ label,
+.box .inputbox input:valid ~ label{
+	top: -20px;
+	left: 0;
+	color: lightsalmon;
+	font-size: 15px;
+}
+
+.box input[type="submit"]{
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #BB8FCE;
+	padding: 10px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.second_box{
+position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 10px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.1);
+	border-radius: 10px;
+     -moz-background-size:cover;
+    -o-background-size:cover;
+    -webkit-background:cover;
+}
+
+.second_box h3{
+	color: deepskyblue;
+}
+
+.second_box input[type="submit"]{
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #BB8FCE;
+	padding: 10px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+
+//////////////////////
+.login-box{
+    
+    position: fixed;
+	top: 350px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 10px;
+     background-image:url(../Images/2.1.jpg);            
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.1);
+	border-radius: 10px;
+     -moz-background-size:cover;
+    -o-background-size:cover;
+    -webkit-background:cover;
+}

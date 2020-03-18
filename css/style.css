@@ -1,0 +1,462 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Roboto:300,400,500,700,900&display=swap');
+
+
+
+/* Global CSS */
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    background: #000000;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+}
+p, a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #000000;
+}
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+}
+.no-padding{
+    padding-left: 0;
+    padding-right: 0;
+}
+.border-bottom{
+    border-bottom: 1px solid #303744 !important;
+}
+.common-content{
+    text-align: center;
+    margin-bottom: 81px;
+}
+.common-content h2 {
+    text-transform: uppercase;
+    margin-bottom: 19px;
+    color: #3b404f;
+    font-weight: 700;
+}
+.common-content p {
+    width: 64%;
+    margin: 0 auto;
+}
+.common-item h3 {
+    text-transform: uppercase;
+    font-size: 23px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #3b404f;
+    font-weight: 600;
+}
+.common-item h6 {
+    margin-bottom: 18px;
+    font-weight: 400;
+    margin-top: 19px;
+}
+.common-item .fa{}
+.common-item p{}
+.common-item a{}
+
+
+
+
+/* header-area */
+.header-area {
+    background: #eeeeee;
+    padding: 12px 0px;
+}
+.header-area ul{
+    float:right;
+}
+.header-area ul li{
+    list-style: none;
+    display: inline;
+    padding: 0 11px;
+}
+.header-area ul li .fa{
+    margin-right: 10px;
+}
+.header-area a{
+    color: #696969;
+}
+
+/* menu-area */
+
+
+.navbar-light .navbar-brand {
+    margin-top: -11px;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #f40612;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #3b404f;
+    text-transform: capitalize;
+    padding: 22px 15px;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #f40612;
+}
+.menu-area h6{
+    color:#f40612;
+    
+}
+
+
+
+/* banner area  */
+
+.banner-area{
+   overflow: hidden; 
+}
+.banner-area .slide-1{
+    padding: 150px 0;
+    background: url(../img/movie01New.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.banner-area .slide-2{
+    padding: 150px 0;
+    background: url(../img/movie02New.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.banner-area .slide-3{
+    padding: 150px 0;
+    background: url(../img/movie03New.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.banner-area .btn{
+    background: #000000;
+    color: #f40612;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 0;
+    margin-top: 6px;
+    margin-left: 0;
+}
+.banner-area .btn:hover{
+    background:#ffffff;
+    transition: 0.3s ease-in-out;
+}
+.banner-area h1{
+        width: 46%;
+       font-size: 49px;
+       font-weight: 900;
+       color: #ffffff;
+       text-transform: uppercase;
+       margin-bottom: 20px;
+}
+.banner-area p{
+        color: #FFFFFF;
+        font-weight: 900;
+        width: 51%;
+        margin-bottom: 20px;
+}
+
+
+/* quote-area */
+.quote-area{
+    background: #f40612;
+    padding: 19px;
+}
+.quote-area h2{
+    font-size: 26px;
+    margin-top: 8px;
+    color:#ffffff;
+    font-weight: 400;
+}
+.quote-area h2 a {
+    color: #000000;
+    text-decoration: underline;
+    font-size: 26px;
+}
+.quote-area .btn{
+    background: #000000;
+    color: #f40612;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 0;
+    margin-top: 2px;
+    margin-left: 57px;
+}
+.quote-area .btn:hover{
+    background: #ffffff;    
+}
+
+/* service-area*/
+.service-area{
+    padding: 100px 0; 
+}
+.service-area a{
+    color: #f40612;
+}
+/* about-area */
+
+.about-area{
+    background:#f40612;
+    
+}
+.about-area iframe{
+   width: 100%;
+    height: 510px;
+}
+.about-area .text-area{
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.about-area .text-area img{
+        margin-top: 20px;
+}
+.about-area .text-area h6{
+    font-size: 19px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.about-area .text-area .item-1{
+    margin-bottom:20px;
+}
+.about-area .text-area .item-2{
+    margin-bottom:20px;
+}
+
+
+
+/* work-area */
+.work-area{
+    padding: 100px 0 50px;
+    margin-bottom: -120px;
+}
+.work-area img{
+    width:100%;
+}
+.work-area .col-md-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.work-area ul{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.work-area ul li{
+    display: inline;
+}
+.work-area ul li a{
+    display: inline-block;
+    padding:10px;
+    text-transform: capitalize;
+    color: #212121;
+}
+
+
+/* customer */
+.customer{
+    padding: 80px 0;
+}
+.customer .slider .col-md-5{
+    margin-bottom:20px;
+}
+.customer .slider{
+    margin-bottom:80px;
+}
+.customer .slider .item img{
+    width: 100%;
+    height: auto;
+}
+.customer .slider .col-md-3{
+    padding-left: 0;
+    padding-right: 0;
+}
+.customer .slider .col-md-9{
+    background: #eeeeee;
+}
+
+.customer .slider .item p{
+    margin-top: 16px;
+    font-size: 15px;
+}
+.customer .slider .item h6{
+    font-size: 14px;
+}
+
+
+/* counter-up*/
+.counter-up{
+    background: #f40612;
+    padding: 100px 0;
+}
+.counter-up p{
+    color: #000000;
+    text-transform: uppercase;
+}
+.counter-up h2 {
+    color: #000000;
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+
+
+/*contact-us*/
+
+.contact-us{
+    background: #000000;
+    padding: 100px 0;
+}
+.contact-us .row{
+    background: #f40612;
+    padding: 30px 0 25px;
+    border-left: 6px solid #FAB702;
+}
+
+.contact-us h3 {
+    font-size: 19px;
+    color: #000000;
+    font-weight: 700;
+}
+.contact-us p {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+.contact-us .btn {
+    background: #000000;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 0;
+    margin-top: 6px;
+    margin-left: 57px;
+}
+
+
+
+/* sub-footer */
+.sub-footer{
+    background:  #252c3a;
+    color: #ffffff;
+    padding: 65px 0;
+    overflow: hidden;
+}
+.sub-footer h5{
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+
+}
+.sub-footer .post .fa{
+    padding-right: 10px;
+}
+.sub-footer .post a{
+    font-size: 14px;
+    display: block;
+    padding: 15px 0;
+    color:#ffffff;
+}
+
+.sub-footer .news h5 {
+    margin-bottom: 30px;
+}
+.sub-footer .news h6 {
+    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 3px;
+    color: #ffffff;
+}
+
+.sub-footer .news p {
+    font-size: 13px;
+    margin-bottom: 0;
+    margin-top: 12px;
+}
+.sub-footer .news .item1{
+    margin-bottom: 20px;
+    padding-bottom:10px;
+}
+.sub-footer .c-us h5 {
+    margin-bottom: 10px;
+}
+.sub-footer .c-us .fa{
+    padding-right:10px;
+}
+.sub-footer .c-us ul li a{
+    color: #ffffff;
+    display: block;
+    padding:15px 0;
+}
+.sub-footer .mail h5{
+    margin-bottom: 23px;
+}
+.sub-footer .mail .form-group{
+    position:relative;
+}
+.sub-footer .main input[type=email]{
+    color: #ffffff;
+    display: block;
+    padding:15px 10px;
+    background: transparent;
+    border-radius: 0;
+}
+.sub-footer .mail input[type=submit]{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 13px;
+    font-size: 15px;
+    background: #F40612;
+    border: none;
+    color: #ffffff;
+}
+.sub-footer .mail p:last-child{
+    font-size: 13px;
+    color:#919191;
+}
+
+
+/* footer area css */
+
+.footer-area{
+    background: #4C5B6E;
+}
+.footer-area p{
+    margin: 14px 0 0;
+    color: #d8deff;
+}
+.footer-area ul{
+    float: right;
+}
+.footer-area ul li{
+    display: inline;
+}
+.footer-area ul li a{
+    display: inline-block;
+    padding: 14px 10px;
+    color: #d8deff;
+    text-transform: capitalize;
+}
