@@ -127,9 +127,8 @@
     
       ?>
       
- <section> 
-     <form method="post">
-   <div class="sidebar">
+ <section> <form method="post">
+ <div class="sidebar">
     <header >Dashboard</header>
   <ul>
       
@@ -140,7 +139,9 @@
       <li><button class="button-sidebar button3"type="submit" name="add_job"><i class="far fa-question-circle"style="padding-right:10px"></i>Add Job Post&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
   
   </ul>
-</div>
+</div> </form>
+     <form method="post" action="../controllers/add_movie_controller.php" enctype="multipart/form-data">
+ 
  <header class="headerback">
            <!--Header logo-->
             <div>
@@ -258,33 +259,33 @@
         <tr>
          
             <td>Movie Name:</td>
-             <td><input type="text" value="<?php echo $m_name; ?>" name="m_name"> <span style="color:red"><?php if(empty($_POST['m_name'])){echo $err;}?></span></td>
+             <td><input type="text"  name="m_name"> <span style="color:red"><?php if(empty($_POST['m_name'])){echo $err;}?></span></td>
          
          </tr>   
          
          <tr>
          
             <td>Movie ID:</td>
-             <td><input type="text" value="<?php echo $m_id; ?>" name="m_id"><span style="color:red"><?php if(empty($_POST['m_id'])){echo $err;}?></span> </td>
+             <td><input type="text"  name="m_id"><span style="color:red"><?php if(empty($_POST['m_id'])){echo $err;}?></span> </td>
          
          </tr>  
          
           <tr>
          
             <td>Description:</td>
-             <td><input type="text" value="<?php echo $m_description; ?>" name="m_description"><span style="color:red"><?php if(empty($_POST['m_description'])){echo $err;}?></span></td>
+             <td><input type="text"  name="m_description"><span style="color:red"><?php if(empty($_POST['m_description'])){echo $err;}?></span></td>
          
          </tr>
           <tr>
          
             <td>Imdb Rate:</td>
-             <td><input type="text" value="<?php echo $m_rate; ?>" name="m_rate"><span style="color:red"><?php if(empty($_POST['m_rate'])){echo $err;}?></span></td>
+             <td><input type="text"  name="m_rate"><span style="color:red"><?php if(empty($_POST['m_rate'])){echo $err;}?></span></td>
        
          </tr>
           <tr>
          
             <td><label for="img">Thumbnail:</label></td>
-             <td><input type="file" value ="<?php echo $m_thumbnail; ?>"id="img" name="img" accept="image/*"><span style="color:red"><?php if(empty($_POST['m_thumbnail'])){echo $err;}?></span></td>
+             <td><input type="file" id="img" name="image" ><span style="color:red"><?php if(empty($_POST['img'])){echo $err;}?></span></td>
             
            
            

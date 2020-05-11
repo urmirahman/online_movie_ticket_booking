@@ -123,6 +123,7 @@
   
   
   <!-- quote area start-->
+
   <section class="quote-area ">
       <div class="container">
           <div class="row wow fadeInUp">
@@ -135,6 +136,7 @@
           </div>
       </div>
   </section>
+     
   <!-- quote area end-->
   
   <!-- service area start -->

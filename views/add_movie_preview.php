@@ -136,8 +136,9 @@
    ?>
       
  <section> 
-     <form method="post">
-   <div class="sidebar">
+ <form>
+ ]
+ <div class="sidebar">
     <header >Dashboard</header>
   <ul>
       
@@ -149,6 +150,9 @@
   
   </ul>
 </div>
+ </form>
+     <form method="post">
+  
  <header class="headerback">
            <!--Header logo-->
             <div>

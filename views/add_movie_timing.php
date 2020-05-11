@@ -1,3 +1,9 @@
+<?php 
+    include '../controllers/add_movie_controller.php';
+    $movieNames = getMovieName();
+	  
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -28,6 +34,8 @@
   <body>
     
       <!--varialbles-->
+     
+
       <?php 
       
       $m_name="" ;
@@ -116,8 +124,8 @@ echo '</script>';
       
       
  <section> 
-     <form method="post">
-   <div class="sidebar">
+ <form method="post">
+ <div class="sidebar">
     <header >Dashboard</header>
   <ul> 
    <li><button class="button-sidebar button3"type="submit" name="movies"><i class="fas fa-film" style="padding-right:10px"></i>Movies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
@@ -128,6 +136,9 @@ echo '</script>';
     
   </ul>
 </div>
+ </form>
+     <form method="post" action="../controllers/add_movie_timing_controller.php" enctype="multipart/form-data">
+  
  <header class="headerback">
            <!--Header logo-->
             <div>
@@ -237,62 +248,74 @@ echo '</script>';
         
     
      <table class="pos3" >
-         <tr>
+     <tr>
              
-         <td colspan="2" style="text-align:center">ADD MOVIE TIMING</td>
+             <td colspan="2" style="text-align:center">ADD MOVIE TIMING</td>
+             
+             </tr>
          
-         </tr>
-     
-        <tr>
-         
-            <td>Movie Name:</td>
-             <td><input type="text" placeholder="Movie Name"value="<?php echo $m_name; ?>" name="m_name"> <span style="color:red"><?php if(empty($_POST['m_name'])){echo $err;}?></span></td>
-         
-         </tr>   
-         
-         <tr>
-           <?php $branches = array("Bashundhara","Mohakhali","Panthopath");
-				
-				?>
-            <td>Branch:</td>
-             <td><select name = "m_branch" value="<?php echo $m_branch;?>">
-							<?php foreach($branches as $i){?>
-								<option><?php echo $i;?></option>    <!-- branches -->
-							<?php }?>
-							</select><span style="color:red"><?php if(empty($_POST['m_branch'])){echo $err;}?></span> </td>
-         
-         </tr>  
-         
-          <tr>
-             <?php $time_slots = array("11.30 am - 2.30 pm","3 pm - 5 pm","7 pm to 10 pm");
-				
-				?>
-            <td>Time Slot:</td>
-             <td><select name = "m_time">
-							<?php foreach($time_slots as $i){?>
-								<option><?php echo $i;?></option>    <!-- timeslots-->
-							<?php }?>
-							</select><span style="color:red"><?php if(empty($_POST['m_time'])){echo $err;}?></span></td>
-         
-         </tr>
-          <tr>
-         
-            <td>Date:</td>
-             <td><input type="date" value="<?php echo $m_rate; ?>" name="m_date"><span style="color:red"><?php if(empty($_POST['m_date'])){echo $err;}?></span></td>
-       
-         </tr>
-          <tr>
-         
-            <td>Tickets:</td>
-             <td><select name="m_tickets" value="<?php echo $m_tickets;?>">
-							<?php for($i = 250;$i<=500;$i++){?>
-								<option><?php echo $i;?></option>    <!-- day -->
-							<?php }?>
-							</select><span style="color:red"><?php if(empty($_POST['m_tickets'])){echo $err;}?></span></td>
             
+              
+              <tr>
+             
+                <td>Movie Name:</td>
+                 <td>
+                 <select name="mm_name" >
+                 <?php
+              foreach($movieNames as $category)
+              {
+                echo "<option value='".$category["m_name"]."'>".$category["m_name"]."</option>";
+              }
+            ?>
+            
+          </select>
+                 </td>
+             
+             </tr>
+              <tr>
+               <?php $branches = array("Bashundhara","Mohakhali","Panthopath");
+            
+            ?>
+                <td>Branch:</td>
+                 <td><select name = "m_branch" >
+                  <?php foreach($branches as $i){?>
+                    <option value ="<?php echo $i;?>"><?php echo $i;?></option>    <!-- branches -->
+                  <?php }?>
+                  </select><span style="color:red"><?php if(empty($_POST['m_branch'])){echo $err;}?></span> </td>
+             
+             </tr> 
+             
+             <tr>
+                 <?php $time_slots = array("11.30 am - 2.30 pm","3 pm - 5 pm","7 pm to 10 pm");
+            
+            ?>
+                <td>Time Slot:</td>
+                 <td><select name = "m_time">
+                  <?php foreach($time_slots as $i){?>
+                    <option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- timeslots-->
+                  <?php }?>
+                  </select><span style="color:red"><?php if(empty($_POST['m_time'])){echo $err;}?></span></td>
+             
+             </tr>
+              <tr>
+             
+                <td>Date:</td>
+                 <td><input type="date"  name="m_date"><span style="color:red"><?php if(empty($_POST['m_date'])){echo $err;}?></span></td>
            
-           
-         </tr>
+             </tr>
+
+             <tr>
+             
+             <td>Tickets:</td>
+              <td><select name="m_tickets" >
+               <?php for($i = 250;$i<=500;$i++){?>
+                 <option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- day -->
+               <?php }?>
+               </select><span style="color:red"><?php if(empty($_POST['m_tickets'])){echo $err;}?></span></td>
+             
+            
+            
+          </tr>
          
      </table>
          <table>
