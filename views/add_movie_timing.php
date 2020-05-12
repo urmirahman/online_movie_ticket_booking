@@ -325,14 +325,13 @@ echo '</script>';
                 <td class="btn-padding">
                     <button type="submit" name="add"class="button button1">ADD</button>
                 </td>
-                 
+                 </form>
+                 <form method="post">
                  <td class="btn-padding">
                     <button type="submit" name="select" class="button button1">PREVIEW</button>
                 </td>
                  
-                 <td class="btn-padding">
-                   <button type="submit" name="update" class="button button1">UPDATE</button>
-                </td>
+                 
                  
              </tr>
          

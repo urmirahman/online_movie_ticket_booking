@@ -6,18 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+   
     
     
     <!-- Font-awesome CDN CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,700i,900&display=swap" rel="stylesheet">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="css/animate.min.css">
-    
-    
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+   
     
     
     <!-- Main CSS -->
@@ -168,86 +164,13 @@
                 </ul>
                 
              </div>
-                
+       
+         
         
      
-     <div class="portion">
+     <div style="margin-top:400px;padding-bottom:-100px;" class="portion">
      <div class="vl pos"></div>
- <div id="app">
-  <div class="card ">
-   <table class>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/movie01New.jpg">  </td>  
-            <td> <span class="card-font-t">Movie Name</span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-      
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/movie03New.jpg">  </td>  
-            <td> <span class="card-font-t">Movie Name</span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/movie02New.jpg">  </td>  
-            <td> <span class="card-font-t">Movie Name</span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/slider3.jpg">  </td>  
-            <td> <span class="card-font-t">Movie Name</span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     
-     <?php
-      
-      if(!empty($_POST['m_name']) && !empty($_POST['m_id']) && !empty($_POST['m_rate']) && !empty($_POST['m_description']) ){
-     
-     
-      ?> 
-      
-      
-     
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/movie02New.jpg">  </td>  
-            <td> <span class="card-font-t"><?php echo $m_name;?></span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     
-      <?php }?>
-</div>
+
         
     
      <table class="pos3" >
@@ -263,12 +186,7 @@
          
          </tr>   
          
-         <tr>
          
-            <td>Movie ID:</td>
-             <td><input type="text"  name="m_id"><span style="color:red"><?php if(empty($_POST['m_id'])){echo $err;}?></span> </td>
-         
-         </tr>  
          
           <tr>
          
@@ -299,20 +217,23 @@
                 <td class="btn-padding">
                     <button type="submit" name="add"class="button button1">ADD</button>
                 </td>
+               
                  
                  <td class="btn-padding">
                     <button type="submit" name="preview" class="button button1">PREVIEW</button>
                 </td>
                  
-                 <td class="btn-padding">
-                   <button type="submit" name="update" class="button button1">UPDATE</button>
-                </td>
+                 
                  
              </tr>
          
          </table>
-     
+        
+          <!-- list view iframe --->
             
+         </div>
+          <div style="margin-top:-500px;margin-left:70% ">
+         <iframe height="70%"width="90%" class="iframe" src="allmovies.php" name="iframe_a"></iframe>
          </div>
 
      

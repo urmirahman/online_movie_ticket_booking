@@ -275,13 +275,14 @@ ul li{
     width: 700px;
     border-color: white;
     margin-left: 280px;
-    margin-top: 60px;
+    margin-top: 200px;
  
 }
 
 table{
     color:white;
     font-size:20px;
+    margin-top: 200px;
     
 }
 td{
@@ -404,7 +405,7 @@ input{
 }
 .pos3{
     
-    margin-top: -380px;
+    margin-top: -300px; 
 
 }
 
@@ -462,5 +463,9 @@ input{
 .card__stars--inactive {
   color: #CCCCCC;
 }
-
+.iframe {
+    height: 80%;
+    width:60%;
+   
+}
 

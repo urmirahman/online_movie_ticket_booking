@@ -122,13 +122,16 @@
   <ul>
       
     <li><button class="button-sidebar button3"type="submit" name="movies"><i class="fas fa-film" style="padding-right:10px"></i>Movies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
-      <li><button class="button-sidebar button3"type="submit" name="add_movie"><i class="far fa-file-video"style="padding-right:10px"></i>Add movie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button></li>
+      <li><button class="button-sidebar button3"type="submit" name="add_movie"><i class="far fa-file-video"style="padding-right:10px"></i>Add&nbsp;&nbsp;&nbsp;movie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button></li>
     <li><button class="button-sidebar button3"type="submit" name="add_movie_timing"><i class="fas fa-hourglass-half"style="padding-right:10px"></i>Add movie Timing&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
       <li><button class="button-sidebar button3"type="submit" name="add_admin"><i class="fas fa-user-shield"style="padding-right:10px"></i>Add Admin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
       <li><button class="button-sidebar button3"type="submit" name="add_job"><i class="far fa-question-circle"style="padding-right:10px"></i>Add Job Post&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
   
   </ul>
 </div>
+</form>
+<form method ="post" action="../controllers/add_admin_controller.php" enctype="multipart/form-data">
+
  <header class="headerback">
            <!--Header logo-->
             <div>
@@ -245,16 +248,11 @@
         <tr>
          
             <td>Admin Name:</td>
-             <td><input type="text" value="<?php echo $a_name; ?>" name="a_name"> <span style="color:red"><?php if(empty($_POST['a_name'])){echo $err;}?></span></td>
+             <td><input type="text"  name="a_name"> <span style="color:red"><?php if(empty($_POST['a_name'])){echo $err;}?></span></td>
          
          </tr>   
          
-         <tr>
-         
-            <td>Admin ID:</td>
-             <td><input type="text" value="<?php echo $a_id; ?>" name="a_id"><span style="color:red"><?php if(empty($_POST['a_id'])){echo $err;}?></span> </td>
-         
-         </tr>  
+          
          
           <tr>
          
@@ -262,9 +260,9 @@
 				
 				?>
             <td>Branch:</td>
-             <td><select name = "a_branch" value="<?php echo $m_branch;?>">
+             <td><select name = "a_branch" >
 							<?php foreach($branches as $i){?>
-								<option><?php echo $i;?></option>    <!-- branches -->
+								<option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- branches -->
 							<?php }?>
 							</select><span style="color:red"><?php if(empty($_POST['a_branch'])){echo $err;}?></span> </td>
          
@@ -277,9 +275,9 @@
 				
 				?>
             <td>Access:</td>
-             <td><select name = "a_access" value="<?php echo $a_access;?>">
+             <td><select name = "a_access" >
 							<?php foreach($accesses as $i){?>
-								<option><?php echo $i;?></option>    <!-- access -->
+								<option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- access -->
 							<?php }?>
 							</select><span style="color:red"><?php if(empty($_POST['a_access'])){echo $err;}?></span> </td>
          
@@ -288,7 +286,7 @@
           <tr>
          
             <td><label for="img">Image:</label></td>
-             <td><input type="file" value ="<?php echo $a_image; ?>"id="img" name="a_image" accept="image/*"><span style="color:red"><?php if(empty($_POST['a_image'])){echo $err;}?></span></td>
+             <td><input type="file" id="img" name="image" ><span style="color:red"><?php if(empty($_POST['a_image'])){echo $err;}?></span></td>
             
            
            
@@ -307,9 +305,7 @@
                     <button type="submit" name="preview" class="button button1">PREVIEW</button>
                 </td>
                  
-                 <td class="btn-padding">
-                   <button type="submit" name="update" class="button button1">UPDATE</button>
-                </td>
+                
                  
              </tr>
          

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Roboto:300,400,500,700,900&display=swap');
+
+.card-view {
+    height: 21%;
+    width: 90%;
+    margin: 16px auto;
+    border:  1px solid #eee;
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.5);
+   
+    background-color: azure;
+    border-radius: 10px;
+   
+}
+
+.image {
+   height: 10%;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+
+body{
+ 
+ background-color: aliceblue;
+ font-family: 'Roboto', sans-serif;
+  background-position: center;
+  background-size:cover;
+  height: 100vh;
+  transition: all .5s;
+}
+
+.title {
+    font-size: 15px;
+    text-align: left;
+    
+   
+    
+}
+
+.left {
+    margin-right: 50px;
+}
+
+
+.rating {
+    color: grey;
+    font-size: 8px;
+}
+
+.descrip {
+    margin-top:  5px;
+   color: black;
+    text-align: left;
+    font-size: 10px;
+   
+}
+.td1 {
+    width: 30%;
+    
+}
+.td2 {
+    text-align: center;
+    padding-top: -50px;
+}
+.inp {
+    margin: 5px 5px;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+ 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  
+  transition-duration: 0.4s;
+  cursor: pointer;
+   height: 25px;
+    width: 42px;
+}
+.buttonn {
+  background-color: #e82020; /* Green */
+  border: 2px solid #e82020;
+  color: white;
+ 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+ 
+  transition-duration: 0.4s;
+  cursor: pointer;
+  height: 25px;
+    width: 40px;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+    border-radius: 5px;
+   
+   
+}
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #e82020;
+     border-radius: 5px;
+   
+   
+}
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.button2:hover {
+  background-color: #e82020;
+  color: white;
+}
+

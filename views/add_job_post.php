@@ -236,7 +236,8 @@
      
       <?php }?>
 </div>
-        
+        </form>
+        <form method="post" action="../controllers/add_job_controller.php" enctype="multipart/form-data">
     
      <table class="pos3" >
          
@@ -248,16 +249,11 @@
         <tr>
          
             <td>Job Title:</td>
-             <td><input type="text" value="<?php echo $j_title; ?>" name="j_title"> <span style="color:red"><?php if(empty($_POST['j_title'])){echo $err;}?></span></td>
+             <td><input type="text"  name="j_title"> <span style="color:red"><?php if(empty($_POST['j_title'])){echo $err;}?></span></td>
          
          </tr>   
          
-         <tr>
-         
-            <td>Job ID:</td>
-             <td><input type="text" value="<?php echo $j_id; ?>" name="j_id"><span style="color:red"><?php if(empty($_POST['j_id'])){echo $err;}?></span> </td>
-         
-         </tr>  
+          
          
           
           <tr>
@@ -266,9 +262,9 @@
 				
 				?>
             <td>Branch:</td>
-             <td><select name = "j_branch" value="<?php echo $j_branch;?>">
+             <td><select name = "j_branch" >
 							<?php foreach($branches as $i){?>
-								<option><?php echo $i;?></option>    <!-- branches -->
+								<option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- branches -->
 							<?php }?>
 							</select><span style="color:red"><?php if(empty($_POST['j_branch'])){echo $err;}?></span> </td>
        
@@ -277,7 +273,7 @@
          <tr>
          
             <td>Description:</td>
-             <td><input type="text" value="<?php echo $j_description; ?>" name="j_description"><span style="color:red"><?php if(empty($_POST['j_description'])){echo $err;}?></span></td>
+             <td><input type="text"  name="j_description"><span style="color:red"><?php if(empty($_POST['j_description'])){echo $err;}?></span></td>
          
          </tr>
          
@@ -290,15 +286,13 @@
                 <td class="btn-padding">
                     <button type="submit" name="add"class="button button1">ADD</button>
                 </td>
-                 
+                 </form>
+                 <form method="post">
                  <td class="btn-padding">
                     <button type="submit" name="preview" class="button button1">PREVIEW</button>
                 </td>
                  
-                 <td class="btn-padding">
-                   <button type="submit" name="update" class="button button1">UPDATE</button>
-                </td>
-                 
+                
              </tr>
          
          </table>
