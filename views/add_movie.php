@@ -168,12 +168,12 @@
          
         
      
-     <div style="margin-top:400px;padding-bottom:-100px;" class="portion">
-     <div class="vl pos"></div>
+     <div style="margin-top:350px;padding-bottom:-100px;" class="portion">
+     <div class=" pos"></div>
 
         
     
-     <table class="pos3" >
+     <table style="margin-left:80px;" class="pos3" >
          <tr>
          <td colspan="2" style="text-align:center">ADD MOVIE</td>
          
@@ -210,7 +210,7 @@
          </tr>
          
      </table>
-         <table>
+         <table style="margin-top:-20px;margin-left:80px;">
          
              <tr>
              
@@ -232,8 +232,8 @@
           <!-- list view iframe --->
             
          </div>
-          <div style="margin-top:-500px;margin-left:70% ">
-         <iframe height="70%"width="90%" class="iframe" src="allmovies.php" name="iframe_a"></iframe>
+          <div style="margin-top:-500px;margin-left:60%;height:75%;width:700px; ">
+         <iframe height="70%" width="520px" class="iframe" src="allmovies.php" name="iframe_a"></iframe>
          </div>
 
      

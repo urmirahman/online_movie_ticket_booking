@@ -319,6 +319,7 @@ input{
   margin: 2px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+    border-radius: 10px;
 }
 .button-sidebar {
   background-color: #111; /* Green */
@@ -341,7 +342,8 @@ input{
     padding: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
-    padding-right: 33px
+    padding-right: 33px;
+   border-radius: 10px;
 }
 .button2 {
     background-color: white; 
@@ -465,7 +467,7 @@ input{
 }
 .iframe {
     height: 80%;
-    width:60%;
+    width:70%;
    
 }
 

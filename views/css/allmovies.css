@@ -2,31 +2,36 @@
 
 .card-view {
     height: 21%;
-    width: 90%;
+    width: 80%;
     margin: 16px auto;
     border:  1px solid #eee;
     box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.5);
    
-    background-color: azure;
+    background-color: white;
     border-radius: 10px;
    
 }
 
 .image {
-   height: 10%;
-    width: 100%;
+   height: 75px;
+    width: 80px;
     border-radius: 10px;
     
 }
 
 body{
  
- background-color: aliceblue;
+
  font-family: 'Roboto', sans-serif;
   background-position: center;
   background-size:cover;
   height: 100vh;
   transition: all .5s;
+}
+header {
+    background-color: gray;
+   
+    text-align: center;
 }
 
 .title {
@@ -59,7 +64,8 @@ body{
     
 }
 .td2 {
-    text-align: center;
+    
+    text-align: right;
     padding-top: -50px;
 }
 .inp {
@@ -122,3 +128,38 @@ body{
   color: white;
 }
 
+
+.topnav {
+  overflow: hidden;
+  background-color: gray;
+    
+}
+
+.topnav a {
+  float: left;
+  
+  color: black;
+  text-align: center;
+  
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+
+.search-input {
+    margin-left: 10%;
+    text-align: center;
+    height: 30px;
+    width: 300px;
+}
+.search-button {
+    height:  30px;
+    width: 60px;
+}

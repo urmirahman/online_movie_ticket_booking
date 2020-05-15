@@ -1,12 +1,24 @@
+<?php 
+require_once("../controllers/add_movie_controller.php");
+	//$products=getAllProducts();
+$movies = getAllMovies();
+$movieid=getmovieId();
 
+if(isset($_POST['update'])){
+     setcookie("mid", $_GET['mid']);
+}
+
+?>
 <html lang="en" dir="ltr">
   <head>
+      
+      
     <meta charset="utf-8">
     <title>Allmovies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     
     <!-- Font-awesome CDN CSS -->
@@ -16,50 +28,64 @@
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/allmovies.css">
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
-}
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-  padding: 2px 16px;
-}
-</style>
     
   </head>
   <body>
+      <form method="get" action="../controllers/add_movie_controller.php">
     
+      <div class="topnav">
+        
+      
+    
+      <input class="search-input" type="text" placeholder="Search.." name="search">
+      <button class="search-button" type="submit"><i class="fa fa-search "></i></button>
+   
+  
+          
+        </div>
+      
+      <?php 
+        foreach ($movies as $movie){
+            
+        $id= $movie["m_id"];
+      ?>
    
     <div class="card-view">
         <table>
+           
+           
+           
             <tr>
-                <td class="td1"> <img class="image" src="../storage/movie_image/1.1.jpg" >
+                 <td>
+            <span style="color:black;font-size:20px;" value="" name="mid"><?php echo $id;?></span>
+                </td>
+                <td class="td1"> <img class="image" src="<?php echo $movie["thumbnail"];?>" >
                 </td> 
             <td >
-                <h3 class="title"> Title</h3> 
-                <span class="rating">Rating</span>
+                <h3 class="title"><?php echo $movie["m_name"];?></h3> 
+                <span class="rating">Rating:<?php echo $movie["m_rate"];?></span>
             </td>
-                <td class="td2" rowspan="2">
-                    <input type="submit" value="Update" name="update" class="button button1">
-                    <input type="submit" value="Delete" name="delete" class="buttonn button2">
+                <td style="margin-left:50px" class="td2" rowspan="2">
+                  <a class ="button button1"href="edit_movie.php?id='<?php echo $id; ?>'" >UPDATE</a> 
+                       <a class ="buttonn button2"href="delete.php?id='<?php echo $id; ?>'" >DELETE</a> 
+                    
+                  
                 </td>
             </tr>
-          <!---  <tr>
-            
-                <td colspan="3">
-               <span class="descrip" >Lorem Ipsum is simply dummy text of the printing and typesetting industry.when an unknown printer took a galley of type and scrambled it to make a type specimen book. </span>
-                    
-                </td>
-                
-            </tr> -->
+        
         </table>
+       
         
       </div>
+    
+          
+      <?php 
+            
+			}
+		?> 
+   
+           </form>
+      
   </body>
 </html>
