@@ -19,7 +19,27 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/add_movie.dashboard.css">
 
-    
+     <script>
+      function validateForm() {
+              var numbers = /^[0-9]+$/;
+        var x = document.forms["movieform"]["m_name"].value;
+        var y = document.forms["movieform"]["m_rate"].value;
+          var z = document.forms["movieform"]["m_description"].value;
+          var a = document.forms["movieform"]["image"].value;
+  if (x == ""||y==""|| z==""||a=="") {
+    alert(" must be filled out");
+    return false;
+  }
+           if(!/^[0-9]+$/.test(y))
+          {alert('please enter a numeric value for rating');
+   
+      return true;
+              
+          }
+          
+}
+       
+      </script>
   </head>
   <body>
     
@@ -45,15 +65,7 @@
 				$m_name=htmlspecialchars($_POST['m_name']);
 				
 				}
-          if(empty($_POST['m_id'])){
-					
-					$err="*";
-				}
-				else
-				{			
-				$m_id=htmlspecialchars($_POST['m_id']);
-				
-				}
+         
           
           if(empty($_POST['m_Description'])){
 					
@@ -80,7 +92,7 @@
 				}
 				else
 				{			
-				$m_thumbnail=htmlspecialchars($_POST['m_thumbnail']);
+				$m_thumbnail=htmlspecialchars($_POST['image']);
 				
 				}
            }
@@ -109,9 +121,9 @@
          
       }
       
-      if(isset($_POST['preview']) && !empty($_POST['m_name']) && !empty($_POST['m_id']) && !empty($_POST['m_description']) && !empty($_POST['m_rate'])){
+      if(isset($_POST['preview']) && !empty($_POST['m_name'])  && !empty($_POST['m_description']) && !empty($_POST['m_rate'])){
            setcookie("mname", $_POST['m_name']);
-          setcookie("mid", $_POST['m_id']);
+         
           setcookie("mdescription", $_POST['m_description']);
           setcookie("mrate", $_POST['m_rate']);
           /* setcookie("Id", $m_id);
@@ -136,7 +148,7 @@
   
   </ul>
 </div> </form>
-     <form method="post" action="../controllers/add_movie_controller.php" enctype="multipart/form-data">
+     <form name="movieform" method="post" onsubmit="return validateForm()" action="../controllers/add_movie_controller.php" enctype="multipart/form-data">
  
  <header class="headerback">
            <!--Header logo-->
@@ -182,7 +194,7 @@
         <tr>
          
             <td>Movie Name:</td>
-             <td><input type="text"  name="m_name"> <span style="color:red"><?php if(empty($_POST['m_name'])){echo $err;}?></span></td>
+             <td><input type="text" class="inp" name="m_name"> <span style="color:red"><?php if(empty($_POST['m_name'])){echo $err;}?></span></td>
          
          </tr>   
          
@@ -191,26 +203,26 @@
           <tr>
          
             <td>Description:</td>
-             <td><input type="text"  name="m_description"><span style="color:red"><?php if(empty($_POST['m_description'])){echo $err;}?></span></td>
+             <td><input type="text" class="inp" name="m_description"><span style="color:red"><?php if(empty($_POST['m_description'])){echo $err;}?></span></td>
          
          </tr>
           <tr>
          
             <td>Imdb Rate:</td>
-             <td><input type="text"  name="m_rate"><span style="color:red"><?php if(empty($_POST['m_rate'])){echo $err;}?></span></td>
+             <td><input type="text" class="inp"  name="m_rate"><span style="color:red"><?php if(empty($_POST['m_rate'])){echo $err;}?></span></td>
        
          </tr>
           <tr>
          
             <td><label for="img">Thumbnail:</label></td>
-             <td><input type="file" id="img" name="image" ><span style="color:red"><?php if(empty($_POST['img'])){echo $err;}?></span></td>
+             <td><input class="inp" type="file" id="img" name="image" ><span style="color:red"><?php if(empty($_POST['img'])){echo $err;}?></span></td>
             
            
            
          </tr>
          
      </table>
-         <table style="margin-top:-20px;margin-left:80px;">
+         <table style="margin-top:-20px;margin-left:47%;">
          
              <tr>
              
@@ -218,10 +230,10 @@
                     <button type="submit" name="add"class="button button1">ADD</button>
                 </td>
                
-                 
+              <!--   
                  <td class="btn-padding">
                     <button type="submit" name="preview" class="button button1">PREVIEW</button>
-                </td>
+                </td>-->
                  
                  
                  

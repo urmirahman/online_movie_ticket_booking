@@ -126,7 +126,7 @@
       
       if(isset($_COOKIE["mname"]) || isset($_COOKIE["mid"]) || isset($_COOKIE["mdescription"])|| isset($_COOKIE["mrate"]))  { // only if it is set
          $name = $_COOKIE["mname"];
-          $id=$_COOKIE["mid"];
+        
           $description=$_COOKIE["mdescription"];
           $rate=$_COOKIE["mrate"];
      }
@@ -190,7 +190,7 @@
          
             <tr>
              <td><img src="img/movie01New.jpg" style="height:200px;width:140px"></td>
-             <td><span style="color:white;font-size:30px;"><?php echo $name;?></span><br><span style="font-size:20px;color:grey">ID:<?php echo $id;?></span><br><span style="font-size:20px;color:grey">Rate:★★★★★★</span></td>
+             <td><span style="color:white;font-size:30px;"><?php echo $name;?></span><br><span style="font-size:20px;color:grey">Rate:★★★★★★</span></td>
              
              </tr>
              

@@ -10,6 +10,10 @@ body{
     background: #000000;
     font-family: 'Roboto', sans-serif;
 }
+.inp {
+     border-radius: 5px;
+     border: 2px solid #adcade;
+}
 
 .sidebar {
 	
@@ -296,6 +300,7 @@ td .link{
 }
 input{
   height: 40px ; 
+    width: 200px;
 }
 /*button design*/
 /*
@@ -329,7 +334,7 @@ input{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 15.5px;
   margin: 2px 2px;
   transition-duration: 0.4s;
   cursor: pointer;

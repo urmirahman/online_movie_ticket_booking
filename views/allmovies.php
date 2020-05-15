@@ -3,16 +3,33 @@ require_once("../controllers/add_movie_controller.php");
 	//$products=getAllProducts();
 $movies = getAllMovies();
 $movieid=getmovieId();
+/*
+$key=$_GET['sk'];
+$movie = getAllMovie($key);
+foreach($movie as $p){
+    echo $p["m_name"]; }*/
 
-if(isset($_POST['update'])){
-     setcookie("mid", $_GET['mid']);
-}
 
 ?>
 <html lang="en" dir="ltr">
   <head>
       
-      
+      <script>
+       function search(){
+           http = new XMLHttpRequest();
+           var search_word=document.getElementById("search_input").value;
+           http.onreadystatechange = function(){
+               if(http.readyState == 4 && http.status == 200){
+                   document.getElementById("search_result").innerHTML=http.responseText;
+               }
+           }
+           http.open("GET","search.php?sk="+search_word,true);
+            //http.open("GET","allmovies.php?sk="+search_word,true);
+			http.send();
+          
+       }
+        
+      </script>
     <meta charset="utf-8">
     <title>Allmovies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,14 +49,18 @@ if(isset($_POST['update'])){
     
   </head>
   <body>
+    <input id="search_input" onkeyup="search()" class="search-input" type="text" placeholder="Search.." name="search" > 
+      
+      <div id="search_result">
+      
+      </div>
       <form method="get" action="../controllers/add_movie_controller.php">
     
       <div class="topnav">
         
       
     
-      <input class="search-input" type="text" placeholder="Search.." name="search">
-      <button class="search-button" type="submit"><i class="fa fa-search "></i></button>
+      
    
   
           
@@ -50,8 +71,8 @@ if(isset($_POST['update'])){
             
         $id= $movie["m_id"];
       ?>
-   
-    <div class="card-view">
+  
+    <div  class="card-view">
         <table>
            
            

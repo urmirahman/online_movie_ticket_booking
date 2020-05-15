@@ -7,6 +7,11 @@
 	{
 		insertProduct();
 	}
+
+else if(isset($_POST["preview"]))
+	{
+		header("Location:../views/add_movie_preview.php");
+	}
 	else if(isset($_GET["edit"]))
 	{
 		editProduct();
@@ -51,6 +56,13 @@ function getmovieId(){
 function getAllMovies()
 	{
 		$query ="SELECT * FROM addmovie";
+		$movies = get($query);
+		return $movies;	
+	}
+
+function getAllMovie($key)
+	{
+		$query ="SELECT * FROM addmovie WHERE m_name LIKE '%$key%'";
 		$movies = get($query);
 		return $movies;	
 	}

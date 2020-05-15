@@ -51,17 +51,17 @@ foreach($movie as $i){
              <table class="table">
             <tr>
                 <td>
-                    <img src="<?php echo $img; ?>" style="height:100px;width:80px;text-align:center;" >
+                  <img  src="<?php echo $img; ?>" style="height:100px;width:100px;text-align:center;border-radius:7px;" >
                 </td>
                 <td >
-                    <input  type="file" name="image">
+                    <input  class="inp" type="file" name="image">
                 </td>
             </tr>
                 <tr>
              <td >
-                    <span >Title:<input name="title" value="<?php echo $title; ?>" type="text"></span> </td>
+                    <span >Title:<input class="inp" name="title" value="<?php echo $title; ?>" type="text"></span> </td>
                 <td>
-                    <span style="text-align:left">Rating:<input name="rate" value="<?php echo $rating; ?>" style="width:100%;" type="text"></span>
+                    <span style="text-align:left">Rating:<input class="inp" name="rate" value="<?php echo $rating; ?>" style="width:100%;" type="text"></span>
                 </td>
             </tr>
                
@@ -70,21 +70,21 @@ foreach($movie as $i){
             <tr>
                 
                 <td colspan="2">
-                Descripting:<span><input name="des" value="<?php echo $des; ?>" style="width:100%;height:100px;" type="text"></span>
+                Descripting:<span><input class="inp" name="des" value="<?php echo $des; ?>" style="width:100%;height:100px;" type="text"></span>
                 </td>
             
             </tr>
         </table>
            
         
-         <table class="" style="margin-left:50%">
+         <table class="" style="margin-left:50%;margin-top:-10px;">
          
              <tr>
              
                 <td class="btn-padding">
-                   <a href="allmovies.php">
-                       <button type="submit" name="add"class="button button1">BACK</button>
-                    </a> 
+                   
+                       <button type="submit" name="add"class="button button1"><a href="allmovies.php">BACK </a> </button>
+                   
                 </td>
                            <input type="hidden" name="id" value="<?php echo $i["m_id"]?>" >
 			<input type="hidden" name="prev_image" value="<?php echo $i["thumbnail"]?>" >

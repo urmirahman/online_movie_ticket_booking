@@ -154,10 +154,13 @@ header {
 
 
 .search-input {
-    margin-left: 10%;
+    margin-left: 15%;
     text-align: center;
+
     height: 30px;
     width: 300px;
+    border-radius: 5px;
+     border: 3px solid skyblue;
 }
 .search-button {
     height:  30px;
