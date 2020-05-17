@@ -14,6 +14,13 @@ body{
      border-radius: 5px;
      border: 2px solid #adcade;
 }
+.inpt {
+    height: 35px;
+     width: 220px;
+     border-radius: 5px;
+     border: 2px solid #adcade;
+}
+
 
 .sidebar {
 	
@@ -99,7 +106,7 @@ label #cancel{
 section{
  
   background: url(../Images/2.1.jpg);
- 
+
   background-position: center;
   background-size:cover;
   height: 100vh;
@@ -285,7 +292,7 @@ ul li{
 
 table{
     color:white;
-    font-size:20px;
+    font-size:16px;
     margin-top: 200px;
     
 }

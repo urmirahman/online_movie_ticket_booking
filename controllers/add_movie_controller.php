@@ -12,7 +12,7 @@ else if(isset($_POST["preview"]))
 	{
 		header("Location:../views/add_movie_preview.php");
 	}
-	else if(isset($_GET["edit"]))
+	else if(isset($_POST["edit"]))
 	{
 		editProduct();
 	}
@@ -82,27 +82,30 @@ function getAllMovie($key)
 		//echo $target_file;
 		$query="INSERT INTO addmovie VALUES(NULL,'$m_name','$m_description',$m_rate,'$target_file')";
 		execute($query);
+       // echo $query;
 		header("Location:../views/add_movie.php");
 		
 	}
 	function editProduct()
-	{
-		$target_file=$_GET["prev_image"];
-		$id=$_GET["id"];
-		$title=$_GET["title"];
-		$rate=$_GET["rate"];
-		$des=$_GET["des"];
-		if(file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])) 
+	{   
+		$target_file=$_POST["prev_image"];
+		$id=$_POST["id"];
+		$title=$_POST["title"];
+		$rate=$_POST["rate"];
+		$des=$_POST["des"];
+       
+		if(file_exists($_FILES['Image']['tmp_name']) || is_uploaded_file($_FILES['Image']['tmp_name'])) 
 		{
 			$target_dir="../storage/movie_image/";
-			$target_file = $target_dir . basename($_FILES["image"]["name"]);
+			$target_file = $target_dir . basename($_FILES["Image"]["name"]);
 			$uploadOk = 1;
 			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-			move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-			//echo 'No upload';
+			move_uploaded_file($_FILES["Image"]["tmp_name"], $target_file);
+			
 		}
+       
 		$query="UPDATE addmovie SET m_name='$title',m_rate=$rate,m_description='$des',thumbnail='$target_file' WHERE m_id=$id";
-		echo $query;
+		//echo $query;
 		execute($query);
 		header("Location:../views/allmovies.php");
 	}

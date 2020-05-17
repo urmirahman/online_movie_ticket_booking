@@ -1,0 +1,213 @@
+body{
+	
+	background: url(background.jpg);
+	background-size: 100% 100%;
+	margin: 0;
+	padding: 0;
+
+}
+
+.header{
+	
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+
+.head{
+	
+	text-align: center;
+	color: indianred;
+	
+}
+
+.head2{
+	
+	text-align: center;
+	color: #7FB3D5;
+	
+}
+
+.new_account h3{
+	
+	position: absolute
+	color: #7FB3D5;
+	
+}
+
+.box{
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	padding-top: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 10px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.1);
+	border-radius: 10px;
+	
+}
+
+.box .inputbox{
+	
+	position: relative;
+	
+}
+
+.box .inputbox input{
+	
+	width: 100%;
+	padding: 20px 0;
+	font-size: 20px;
+	color: #fff;
+	margin-bottom: 30px;
+	border: none;
+	border: 1px solid #fff;
+	outline: none;
+	background: transparent;
+	
+}
+
+.box .inputbox label{
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px 0;
+	font-size: 25px;
+	color: #fff;
+	pointer-events: none;
+	transition: .5s;
+	
+}
+
+.box .inputbox input:focus ~ label,
+.box .inputbox input:valid ~ label{
+	
+	top: -20px;
+	left: 0;
+	color: lightsalmon;
+	font-size: 15px;
+	
+}
+
+.box input[type="submit"]{
+	
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #BB8FCE;
+	padding: 10px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	
+}
+
+.second_box{
+	
+	position: absolute;
+	top: 63%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	padding-top: 10px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 20px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.1);
+	border-radius: 10px;
+	
+}
+
+.second_box h3{
+	
+	color: #7FB3D5;
+	
+}
+
+.second_box input[type="submit"]{
+	
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #BB8FCE;
+	padding: 10px 30px;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	
+}
+
+/*header section*/
+
+header{
+	
+	width: 100%;
+	height: 70px;
+	background-color: #282828;
+	
+}
+	
+.second-header{
+	
+	width: 100%;
+	height: 30px;
+	background-color: #282828;
+	
+}
+
+.welcome{
+	
+	position: absolute;
+	padding: 3px;
+	float: left;
+	margin-left: 2%;
+	margin-top: 10px;
+	font-family: 'Alfa Slab One', cursive;
+	color: #39ca74;
+	
+}
+
+nav ul{
+	
+	width: auto;
+	float: right;
+	margin-top: 8px;
+	
+}
+
+nav li{
+	
+	display: inline-block;
+	padding: 15px 30px;
+	
+}
+
+a{
+	
+	text-align: center;
+	color: #ffffff;
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2vw;
+	
+}
+
+a:hover{
+	
+	color: #F0c330;
+	transition: 0.5s;
+	
+}

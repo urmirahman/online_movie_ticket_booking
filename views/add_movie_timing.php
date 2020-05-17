@@ -168,83 +168,9 @@ echo '</script>';
                 
         
      
-     <div class="portion">
-     <div class="vl pos"></div>
- <div id="app">
-  <div class="card ">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/movie01New.jpg">  </td>  
-            <td> <span class="card-font-t">Movie Name</span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-      
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/movie03New.jpg">  </td>  
-            <td> <span class="card-font-t">Movie Name</span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/movie02New.jpg">  </td>  
-            <td> <span class="card-font-t">Movie Name</span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/slider3.jpg">  </td>  
-            <td> <span class="card-font-t">Movie Name</span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
+     <div style="margin-top:350px;padding-bottom:-100px;margin-left:25%;" class="portion">
      
-     <?php
-      
-      if(!empty($_POST['m_name']) && !empty($_POST['m_id']) && !empty($_POST['m_rate']) && !empty($_POST['m_description']) ){
-     
-     
-      ?> 
-      
-      
-     
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/movie02New.jpg">  </td>  
-            <td> <span class="card-font-t"><?php echo $m_name;?></span> <br> <span style="color:black;font-size:10px">rating:★★★★★★</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     
-      <?php }?>
-</div>
+ 
         
     
      <table class="pos3" >
@@ -260,7 +186,7 @@ echo '</script>';
              
                 <td>Movie Name:</td>
                  <td>
-                 <select name="mm_name" >
+                 <select class="inpt" name="mm_name" >
                  <?php
               foreach($movieNames as $category)
               {
@@ -277,7 +203,7 @@ echo '</script>';
             
             ?>
                 <td>Branch:</td>
-                 <td><select name = "m_branch" >
+                 <td><select class="inpt" name = "m_branch" >
                   <?php foreach($branches as $i){?>
                     <option value ="<?php echo $i;?>"><?php echo $i;?></option>    <!-- branches -->
                   <?php }?>
@@ -290,7 +216,7 @@ echo '</script>';
             
             ?>
                 <td>Time Slot:</td>
-                 <td><select name = "m_time">
+                 <td><select class="inpt" name = "m_time">
                   <?php foreach($time_slots as $i){?>
                     <option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- timeslots-->
                   <?php }?>
@@ -300,14 +226,14 @@ echo '</script>';
               <tr>
              
                 <td>Date:</td>
-                 <td><input type="date"  name="m_date"><span style="color:red"><?php if(empty($_POST['m_date'])){echo $err;}?></span></td>
+                 <td><input class="inpt" type="date"  name="m_date"><span style="color:red"><?php if(empty($_POST['m_date'])){echo $err;}?></span></td>
            
              </tr>
 
              <tr>
              
              <td>Tickets:</td>
-              <td><select name="m_tickets" >
+              <td><select class="inpt" name="m_tickets" >
                <?php for($i = 250;$i<=500;$i++){?>
                  <option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- day -->
                <?php }?>
@@ -318,19 +244,18 @@ echo '</script>';
           </tr>
          
      </table>
-         <table>
+         <table style="margin-top:-10px;margin-left:35%;">
          
              <tr>
              
                 <td class="btn-padding">
                     <button type="submit" name="add"class="button button1">ADD</button>
                 </td>
-                 </form>
-                 <form method="post">
-                 <td class="btn-padding">
+                
+                <!-- <td class="btn-padding">
                     <button type="submit" name="select" class="button button1">PREVIEW</button>
                 </td>
-                 
+                 -->
                  
                  
              </tr>
@@ -341,7 +266,9 @@ echo '</script>';
          </div>
 
      
-     
+     <div style="margin-top:-500px;margin-left:60%;height:470px;width:700px; ">
+         <iframe height="70%" width="520px" class="iframe" src="allmovies.php" name="iframe_a"></iframe>
+         </div>
      
      
        </form>

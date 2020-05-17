@@ -1,8 +1,8 @@
 <?php 
-require_once("../controllers/add_movie_controller.php");
+require_once("../controllers/add_admin_controller.php");
 	//$products=getAllProducts();
-$movies = getAllMovies();
-$movieid=getmovieId();
+$admins = getAlladmins()
+//$adminid=getadminId();
 /*
 $key=$_GET['sk'];
 $movie = getAllMovie($key);
@@ -23,7 +23,7 @@ foreach($movie as $p){
                    document.getElementById("search_result").innerHTML=http.responseText;
                }
            }
-           http.open("GET","search.php?sk="+search_word,true);
+           http.open("GET","admin_search.php?sk="+search_word,true);
             //http.open("GET","allmovies.php?sk="+search_word,true);
 			http.send();
           
@@ -31,7 +31,7 @@ foreach($movie as $p){
         
       </script>
     <meta charset="utf-8">
-    <title>Allmovies</title>
+    <title>All admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -67,9 +67,9 @@ foreach($movie as $p){
         </div>
       
       <?php 
-        foreach ($movies as $movie){
+        foreach ($admins as $admin){
             
-        $id= $movie["m_id"];
+        $id= $admin["a_id"];
       ?>
   
     <div  class="card-view">
@@ -78,14 +78,15 @@ foreach($movie as $p){
            
            
             <tr>
-                 <td>
+                 <td >
             <span style="color:white;font-size:1px;" value="" name="mid"><?php echo $id;?></span>
                 </td>
-                <td class="td1"> <img class="image" src="<?php echo $movie["thumbnail"];?>" >
+                <td class="td1"> <img class="image" src="<?php echo $admin["a_image"];?>" >
                 </td> 
             <td >
-                <h3 class="title"><?php echo $movie["m_name"];?></h3> 
-                <span class="rating">Rating:<?php echo $movie["m_rate"];?></span>
+                <h3 class="title"><?php echo $admin["a_name"];?></h3> 
+                <h2 class="rating"><?php echo $admin["a_branch"];?></h2>
+                <span class="rating">Access:<?php echo $admin["a_access"];?></span>
             </td>
                 <td style="margin-left:50px" class="td2" rowspan="2">
                   <a class ="button button1"href="edit_movie.php?id='<?php echo $id; ?>'" >UPDATE</a> 
@@ -94,6 +95,7 @@ foreach($movie as $p){
                   
                 </td>
             </tr>
+            
         
         </table>
        

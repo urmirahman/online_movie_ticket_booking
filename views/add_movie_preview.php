@@ -124,20 +124,23 @@
     }*/
 
       
-      if(isset($_COOKIE["mname"]) || isset($_COOKIE["mid"]) || isset($_COOKIE["mdescription"])|| isset($_COOKIE["mrate"]))  { // only if it is set
-         $name = $_COOKIE["mname"];
+      if(!isset($_COOKIE['mname']) )  { // only if it is set
+        /* $name = $_COOKIE["mname"];
         
           $description=$_COOKIE["mdescription"];
-          $rate=$_COOKIE["mrate"];
+          $rate=$_COOKIE["mrate"];*/
+          echo " cookie not set";
+          
      }
       
+     
       
      
    ?>
       
  <section> 
  <form>
- ]
+ 
  <div class="sidebar">
     <header >Dashboard</header>
   <ul>
@@ -168,7 +171,7 @@
             <div class="">
             
                 <ul class="removePoint">
-                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="login2.php">Logout</a></li>
+                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="userLogin.php">Logout</a></li>
                     <li class="listDesign" Style="float:right"><a class="listDesignA" href="superadmin_profile.php">Profile</a></li>
                      <li class="listDesign" Style="float:right"><a class="listDesignA"  href="#">Setting</a></li>
                    <li class="listDesign" Style="float:right"><a class="active" href="">Home</a></li>
@@ -190,13 +193,13 @@
          
             <tr>
              <td><img src="img/movie01New.jpg" style="height:200px;width:140px"></td>
-             <td><span style="color:white;font-size:30px;"><?php echo $name;?></span><br><span style="font-size:20px;color:grey">Rate:★★★★★★</span></td>
+             <td><span style="color:white;font-size:30px;"><?php echo $_COOKIE['mname'];?></span><br><span style="font-size:20px;color:grey">Rate:<?php echo $_COOKIE['mrate'];?></span></td>
              
              </tr>
              
              <tr>
              
-                <td colspan="2" style="font-size:20px;color:grey;text-align:justify">Description:<?php echo $description;?></td>
+                <td colspan="2" style="font-size:20px;color:grey;text-align:justify">Description:<?php echo $_COOKIE['mdes'];?></td>
                  
              </tr>
          

@@ -1,16 +1,16 @@
 <?php
 	
-	require_once '../controllers/add_movie_controller.php';
+	require_once '../controllers/add_admin_controller.php';
  
 	 $key=$_GET['sk'];
-$movies = getAllMovie($key);/*
+$admins = getAllMovie($key);/*
 foreach($movies as $m){
     echo $m["m_name"];
 }
     */
 	
 ?>
- <form method="get" action="../controllers/add_movie_controller.php">
+  <form method="get" action="../controllers/add_admin_controller.php">
     
       <div class="topnav">
         
@@ -23,25 +23,26 @@ foreach($movies as $m){
         </div>
       
       <?php 
-        foreach ($movies as $movie){
+        foreach ($admins as $admin){
             
-        $id= $movie["m_id"];
+        $id= $admin["a_id"];
       ?>
-   
+  
     <div  class="card-view">
         <table>
            
            
            
             <tr>
-                 <td>
+                 <td >
             <span style="color:white;font-size:1px;" value="" name="mid"><?php echo $id;?></span>
                 </td>
-                <td class="td1"> <img class="image" src="<?php echo $movie["thumbnail"];?>" >
+                <td class="td1"> <img class="image" src="<?php echo $admin["a_image"];?>" >
                 </td> 
             <td >
-                <h3 class="title"><?php echo $movie["m_name"];?></h3> 
-                <span class="rating">Rating:<?php echo $movie["m_rate"];?></span>
+                <h3 class="title"><?php echo $admin["a_name"];?></h3> 
+                <h2 class="rating"><?php echo $admin["a_branch"];?></h2>
+                <span class="rating">Rating:<?php echo $admin["a_access"];?></span>
             </td>
                 <td style="margin-left:50px" class="td2" rowspan="2">
                   <a class ="button button1"href="edit_movie.php?id='<?php echo $id; ?>'" >UPDATE</a> 
@@ -50,6 +51,7 @@ foreach($movies as $m){
                   
                 </td>
             </tr>
+            
         
         </table>
        
@@ -63,3 +65,4 @@ foreach($movies as $m){
 		?> 
    
            </form>
+      

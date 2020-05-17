@@ -30,6 +30,23 @@
 		$movieNames = get($query);
 		return $movieNames;
 	}*/
+function getAllMovie($key)
+	{
+		$query ="SELECT * FROM addadmin WHERE a_name LIKE '%$key%'";
+		$admins = get($query);
+		return $admins;	
+	}
+function getadminId(){
+		$query = "SELECT a_id FROM addadmin";
+		$adminid = get($query);
+		return $adminid;
+	}
+function getAlladmins()
+	{
+		$query ="SELECT * FROM addadmin";
+		$admins = get($query);
+		return $admins;	
+	}
 	function insertAdmin()
 	{
 		$a_name=$_POST["a_name"];

@@ -147,7 +147,7 @@
             <div class="">
             
                 <ul class="removePoint">
-                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="login2.php">Logout</a></li>
+                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="userLogin.php">Logout</a></li>
                     <li class="listDesign" Style="float:right"><a class="listDesignA" href="superadmin_profile.php">Profile</a></li>
                      <li class="listDesign" Style="float:right"><a class="listDesignA"  href="#">Setting</a></li>
                    <li class="listDesign" Style="float:right"><a class="active" href="">Home</a></li>
@@ -160,86 +160,12 @@
              </div>
                 
      
-     <div class="portion">
-     <div class="vl pos"></div>
- <div id="app">
-  <div class="card ">
-   <table >
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/person01.jpg">  </td>  
-            <td> <span class="card-font-t">Admin Name</span> <br> <span style="color:black;font-size:10px">Dhanmondi</span> <span style="color:black;font-size:10px;">Denied</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-      
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/person01.jpg">  </td>  
-            <td> <span class="card-font-t">Admin Name</span> <br> <span style="color:black;font-size:10px">Kuratoli</span> <span style="color:black;font-size:10px;">Granted</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/person01.jpg">  </td>  
-            <td> <span class="card-font-t">Admin Name</span> <br> <span style="color:black;font-size:10px;padding-right:5px">Mohakhali</span><span style="color:black;font-size:10px;">Granted</span>  </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     <div class="card">
-   <table >
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/person01.jpg">  </td>  
-            <td> <span class="card-font-t">Admin Name</span> <br> <span style="color:black;font-size:10px;padding-right:5px">Panthopath</span> <span style="color:black;font-size:10px;">Granted</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     
-        <?php
-      
-      if(!empty($_POST['a_name']) && !empty($_POST['a_id']) && !empty($_POST['a_branch']) && !empty($_POST['a_access']) ){
-     
-     
-      ?> 
-      
-      
-     
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/person01.jpg">  </td>  
-            <td> <span class="card-font-t"><?php echo $a_name;?></span> <br> <span style="color:black;font-size:10px;padding-right:5px"><?php echo $a_branch;?></span> <span style="color:black;font-size:10px;"><?php echo $a_access;?></span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     
-      <?php }?>
-</div>
+     <div style="margin-top:350px;padding-bottom:-100px;" class="portion">
+    
+
         
     
-     <table class="pos3" >
+     <table style="margin-left:80px;" class="pos3" >
          <tr>
          <td colspan="2" style="text-align:center">ADD ADMIN</td>
          
@@ -248,7 +174,7 @@
         <tr>
          
             <td>Admin Name:</td>
-             <td><input type="text"  name="a_name"> <span style="color:red"><?php if(empty($_POST['a_name'])){echo $err;}?></span></td>
+             <td><input class="inpt" type="text"  name="a_name"> <span style="color:red"><?php if(empty($_POST['a_name'])){echo $err;}?></span></td>
          
          </tr>   
          
@@ -260,7 +186,7 @@
 				
 				?>
             <td>Branch:</td>
-             <td><select name = "a_branch" >
+             <td><select class="inpt" name = "a_branch" >
 							<?php foreach($branches as $i){?>
 								<option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- branches -->
 							<?php }?>
@@ -275,7 +201,7 @@
 				
 				?>
             <td>Access:</td>
-             <td><select name = "a_access" >
+             <td><select class="inpt" name = "a_access" >
 							<?php foreach($accesses as $i){?>
 								<option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- access -->
 							<?php }?>
@@ -286,24 +212,25 @@
           <tr>
          
             <td><label for="img">Image:</label></td>
-             <td><input type="file" id="img" name="image" ><span style="color:red"><?php if(empty($_POST['a_image'])){echo $err;}?></span></td>
+             <td><input class="inpt" type="file" id="img" name="image" ><span style="color:red"><?php if(empty($_POST['a_image'])){echo $err;}?></span></td>
             
            
            
          </tr>
          
      </table>
-         <table>
+         <table style="margin-top:-20px;margin-left:47%;">
          
              <tr>
              
                 <td class="btn-padding">
                     <button type="submit" name="add"class="button button1">ADD</button>
                 </td>
-                 
+               <!--  
                  <td class="btn-padding">
                     <button type="submit" name="preview" class="button button1">PREVIEW</button>
-                </td>
+                </td> -->
+
                  
                 
                  
@@ -315,7 +242,9 @@
          </div>
 
      
-     
+         <div style="margin-top:-500px;margin-left:60%;height:470px;width:700px; ">
+         <iframe height="70%" width="520px" class="iframe" src="alladmins.php" name="iframe_a"></iframe>
+         </div>
        </form>
      
      

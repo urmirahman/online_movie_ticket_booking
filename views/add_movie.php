@@ -5,20 +5,14 @@
     <title>ADD MOVIE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-   
-    
-    
     <!-- Font-awesome CDN CSS -->
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,700i,900&display=swap" rel="stylesheet">
-    <!-- Animate CSS -->
-   
-    
-    
+  
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/add_movie.dashboard.css">
-
+<!--  AJAX search  -->
      <script>
       function validateForm() {
               var numbers = /^[0-9]+$/;
@@ -46,59 +40,29 @@
       <!--varialbles-->
       <?php 
       
-      $m_name="" ;
+      $m_name="Imitation Game" ;
       $m_id="";
-      $m_description="";
-      $m_rate="";
+      $m_description="action";
+      $m_rate="5";
       $m_thumbnail="";
       $err="";
       
       
-      if(isset($_POST['add'])){
-				
-				if(empty($_POST['m_name'])){
-					
-					$err="*";
-				}
-				else
-				{			
-				$m_name=htmlspecialchars($_POST['m_name']);
-				
-				}
+      if(isset($_POST['preview'])){
+          
+         setcookie("mname", $m_name);
          
+         setcookie("mdes",$m_description);
+          setcookie("mrate", $m_rate);
+           header("Location:add_movie_preview.php");
           
-          if(empty($_POST['m_Description'])){
-					
-					$err="*";
-				}
-				else
-				{			
-				$m_description=htmlspecialchars($_POST['m_description']);
 				
-				}
-          
-          if(empty($_POST['m_rate'])){
-					
-					$err="*";
-				}
-				else
-				{			
-				$m_rate=htmlspecialchars($_POST['m_rate']);
 				
-				}
-          if(empty($_POST['m_thumbnail'])){
-					
-					$err="*";
-				}
-				else
-				{			
-				$m_thumbnail=htmlspecialchars($_POST['image']);
-				
-				}
            }
       ?>
       
       <?php 
+                      
       
       if(isset($_POST['movies'])){
          
@@ -121,19 +85,12 @@
          
       }
       
-      if(isset($_POST['preview']) && !empty($_POST['m_name'])  && !empty($_POST['m_description']) && !empty($_POST['m_rate'])){
-           setcookie("mname", $_POST['m_name']);
-         
-          setcookie("mdescription", $_POST['m_description']);
-          setcookie("mrate", $_POST['m_rate']);
-          /* setcookie("Id", $m_id);
-           setcookie("Description", $m_description);*/
-           header("Location:add_movie_preview.php");
-         
-      }
-     
+      
+   
     
       ?>
+      
+     <!-- sidebar   -->
       
  <section> <form method="post">
  <div class="sidebar">
@@ -165,7 +122,7 @@
             <div class="">
             
                 <ul class="removePoint">
-                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="login2.php">Logout</a></li>
+                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="userLogin.php">Logout</a></li>
                     <li class="listDesign" Style="float:right"><a class="listDesignA" href="superadmin_profile.php">Profile</a></li>
                      <li class="listDesign" Style="float:right"><a class="listDesignA"  href="#">Setting</a></li>
                    <li class="listDesign" Style="float:right"><a class="active" href="">Home</a></li>
@@ -183,7 +140,7 @@
      <div style="margin-top:350px;padding-bottom:-100px;" class="portion">
      <div class=" pos"></div>
 
-        
+      <!--   -->    
     
      <table style="margin-left:80px;" class="pos3" >
          <tr>
@@ -198,18 +155,16 @@
          
          </tr>   
          
-         
-         
           <tr>
          
             <td>Description:</td>
-             <td><input type="text" class="inp" name="m_description"><span style="color:red"><?php if(empty($_POST['m_description'])){echo $err;}?></span></td>
+             <td><input   type="text" class="inp" name="m_description"><span style="color:red"><?php if(empty($_POST['m_description'])){echo $err;}?></span></td>
          
          </tr>
           <tr>
          
             <td>Imdb Rate:</td>
-             <td><input type="text" class="inp"  name="m_rate"><span style="color:red"><?php if(empty($_POST['m_rate'])){echo $err;}?></span></td>
+             <td><input  type="text" class="inp"  name="m_rate"><span style="color:red"><?php if(empty($_POST['m_rate'])){echo $err;}?></span></td>
        
          </tr>
           <tr>
@@ -230,13 +185,6 @@
                     <button type="submit" name="add"class="button button1">ADD</button>
                 </td>
                
-              <!--   
-                 <td class="btn-padding">
-                    <button type="submit" name="preview" class="button button1">PREVIEW</button>
-                </td>-->
-                 
-                 
-                 
              </tr>
          
          </table>
@@ -244,99 +192,21 @@
           <!-- list view iframe --->
             
          </div>
-          <div style="margin-top:-500px;margin-left:60%;height:75%;width:700px; ">
-         <iframe height="70%" width="520px" class="iframe" src="allmovies.php" name="iframe_a"></iframe>
-         </div>
-
-     
-     
+    
      
      </form>
+       <!-- List of all movies   -->
+     
+       <div style="margin-top:-500px;margin-left:60%;height:75%;width:700px; ">
+         <iframe height="70%" width="520px" class="iframe" src="allmovies.php" name="iframe_a"></iframe>
+           <form method="post">
+     <button style="margin-top:-13.5%; margin-left:-50%;" type="submit" name="preview" class="button button1">PREVIEW</button>
+     </form>
+         </div>
      
      </section> 
       
-         
-      <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    
-    <!-- Wow JS -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- Wow JS -->
-    <script src="js/wow.min.js"></script>
-    <!-- Bootstrap Js File -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Main Theme Js File -->
-    <script>
-         $('.owl-carousel').owlCarousel({
-                items:1,
-                dots:true,
-                merge:true,
-                autoplay:true,
-                autoplayHoverPause: true,
-                loop:true,
-                margin:10,
-                video:true,
-                lazyLoad:true,
-                center:true,
-                responsive:{
-                480:{
-                items:2
-                },
-                600:{
-                items:4
-                    }
-                }
-            }) 
-    </script>
-    <script>
-         $('.owl-carousel2').owlCarousel({
-                loop:true,
-                margin:10,
-                nav:false,
-                dots:false,
-                autoplay:true,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:2
-                    },
-                    1000:{
-                        items:2
-                    }
-                }
-            }) 
-    </script>    
-    <script type="text/javascript">
-      $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false,
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:3
-            }
-        }
-    })
-    </script>
-
-
-    <script>
-              new WOW().init();
-    </script>
+ 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </body>
 </html>

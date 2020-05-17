@@ -45,7 +45,7 @@ foreach($movie as $i){
 
  
 
-        <form method="get" action="../controllers/add_movie_controller.php">
+        <form method="post" action="../controllers/add_movie_controller.php" enctype="multipart/form-data">
      
       
              <table class="table">
@@ -54,7 +54,7 @@ foreach($movie as $i){
                   <img  src="<?php echo $img; ?>" style="height:100px;width:100px;text-align:center;border-radius:7px;" >
                 </td>
                 <td >
-                    <input  class="inp" type="file" name="image">
+                    <input  class="inp" type="file" name="Image">
                 </td>
             </tr>
                 <tr>
@@ -80,20 +80,25 @@ foreach($movie as $i){
          <table class="" style="margin-left:50%;margin-top:-10px;">
          
              <tr>
-             
+                  
+     
+                  <td class="btn-padding">
+                    <button type="submit" name="edit" class="button button1">ADD</button>
+                </td>
+             <!--   </form>
+             <form method="get"> -->
                 <td class="btn-padding">
                    
-                       <button type="submit" name="add"class="button button1"><a href="allmovies.php">BACK </a> </button>
+                       <button type="submit" name="back"class="button button1"><a href="allmovies.php">BACK </a> </button>
                    
                 </td>
+                 
                            <input type="hidden" name="id" value="<?php echo $i["m_id"]?>" >
 			<input type="hidden" name="prev_image" value="<?php echo $i["thumbnail"]?>" >
                  
-                 <td class="btn-padding">
-                    <button type="submit" name="edit" class="button button1">ADD</button>
-                </td>
+                
                  
-                 
+              
                  
              </tr>
              
@@ -102,7 +107,7 @@ foreach($movie as $i){
 
             <?php }?>
           
-              </form>
+              </form>   
         
        
         

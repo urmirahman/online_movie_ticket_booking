@@ -18,10 +18,19 @@
     
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
-    
+    <link rel="stylesheet" href="css/style.css">
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/movies.dashboard.css">
+      
+      <!-- new-->
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="Style/moviestyle.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      
+		<title>Homepage</title>
+		<link rel="icon" type="image/png" href="Img/logo.png">
 
     
   </head>
@@ -100,7 +109,7 @@
             <div class="">
             
                 <ul class="removePoint">
-                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="login2.php">Logout</a></li>
+                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="userLogin.php">Logout</a></li>
                     <li class="listDesign" Style="float:right"><a class="listDesignA" href="superadmin_profile.php">Profile</a></li>
                      <li class="listDesign" Style="float:right"><a class="listDesignA"  href="#">Setting</a></li>
                    <li class="listDesign" Style="float:right"><a class="active" href="">Home</a></li>
@@ -113,18 +122,53 @@
              </div>
                 
      
-     <div class="portion">
-    <div class="row">
-  <div class="column">
-    <img src="img/movie01New.jpg" alt="Snow" style="width:100%;">
-  </div>
-  <div class="column">
-    <img src="img/movie02New.jpg" alt="Forest" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="img/movie03New.jpg" alt="Mountains" style="width:100%">
-  </div>
-</div>
+     <div class="portion  ">
+  <?php
+			$link = mysqli_connect("localhost", "root", "", "online_movie");
+			$sql = "SELECT * FROM addmovie";
+         $movies ="SELECT * FROM addmovie";
+        
+		?>
+         
+         <div id="home-section-1" class="movie-show-container">
+		
+			
+
+			<div class="movies-container">
+
+				<?php
+					if($result = mysqli_query($link, $sql)){
+						if(mysqli_num_rows($result) > 0){
+                           $r = mysqli_fetch_array($result);
+                          $p=count($r);
+                           // echo '<div class ="owl-carousel owl-theme">';
+							for ($i = 0; $i <$p-2; $i++){
+                               
+								$row = mysqli_fetch_array($result);
+                               //  echo count($row);
+                                
+								echo '<div class="movie-box  ">';
+								echo '<img src="'. $row['thumbnail'] .'">';
+								echo '<div class="movie-info ">';
+								echo '<h3>'. $row['m_name'] .'</h3>';
+								echo '<a href="booking.php?id='.$row['m_id'].'"><i class="fas fa-ticket-alt"></i> Book a seat</a>';
+								echo '</div>';
+								echo '</div>';
+							}
+                           // echo '</div';
+							mysqli_free_result($result);
+						} else{
+							echo '';
+						}
+					} else{
+						echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+					}
+					
+					// Close connection
+					mysqli_close($link);
+				?>
+			</div>
+		</div>
 
      </div>
      

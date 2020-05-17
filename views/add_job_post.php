@@ -117,8 +117,9 @@
       
       
  <section> 
-     <form method="post">
+     
    <div class="sidebar ">
+       <form method="post">
     <header >Dashboard</header>
   <ul>
       
@@ -129,6 +130,7 @@
       <li><button class="button-sidebar button3 active"type="submit" name="add_job"><i class="far fa-question-circle"style="padding-right:10px"></i>Add Job Post&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></li>
   
   </ul>
+           </form>
 </div>
  <header class="headerback">
            <!--Header logo-->
@@ -145,7 +147,7 @@
             <div class="">
             
                 <ul class="removePoint">
-                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="login2.php">Logout</a></li>
+                     <li class="listDesign" Style="float:right"><a  class="listDesignA" href="userLogin.php">Logout</a></li>
                     <li class="listDesign" Style="float:right"><a class="listDesignA" href="#">Profile</a></li>
                      <li class="listDesign" Style="float:right"><a class="listDesignA"  href="#">Setting</a></li>
                    <li class="listDesign" Style="float:right"><a class="active" href="">Home</a></li>
@@ -159,87 +161,13 @@
                 
         
      
-     <div class="portion">
-     <div class="vl pos"></div>
- <div id="app">
-  <div class="card ">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/job.jpg">  </td>  
-            <td> <span class="card-font-t">Job title</span> <br> <span style="color:black;font-size:10px;padding-right:5px">Mohakhali</span><span style="color:black;font-size:10px;">Id:123</span>  </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-      
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/job.jpg">  </td>  
-            <td> <span class="card-font-t">Job Title</span> <br> <span style="color:black;font-size:10px;padding-right:5px">Mohakhali</span><span style="color:black;font-size:10px;">Id:123</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/job.jpg">  </td>  
-            <td> <span class="card-font-t">Job Title</span> <br> <span style="color:black;font-size:10px;padding-right:5px">Khitkhet</span><span style="color:black;font-size:10px;">Id:123</span>  </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     <div class="card">
-   <table>
-      
-        <tr>
-        
-            <td colspan="2"> <img class="card__img" src="img/job.jpg">  </td>  
-            <td> <span class="card-font-t">Job title</span> <br> <span style="color:black;font-size:10px;padding-right:5px">Mohakhali</span><span style="color:black;font-size:10px;">Id:123</span> </td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
+     <div style="margin-top:380px;padding-bottom:-100px;" class="portion">
      
-     <?php
-      
-      if(!empty($_POST['j_title']) && !empty($_POST['j_id']) && !empty($_POST['j_branch']) && !empty($_POST['j_description']) ){
-     
-     
-      ?> 
-      
-      
-     
-     <div class="card">
-   <table>
-      
-        <tr>
+
         
-            <td colspan="2"> <img class="card__img" src="img/job.jpg">  </td>  
-            <td> <span class="card-font-t">Job:<?php echo $j_title;?></span> <br> <span style="color:black;font-size:10px;padding-right"><?php echo $j_branch;?></span> <span style="color:black;font-size:10px;">Id:<?php echo $j_id;?></span></td> 
-            <td ><span style="" ><a href="#">See More</a></span></td>
-            
-       </tr>
-       </table>
-  </div>
-     
-      <?php }?>
-</div>
-        </form>
         <form method="post" action="../controllers/add_job_controller.php" enctype="multipart/form-data">
     
-     <table class="pos3" >
+     <table style="margin-left:80px;" class="pos3" >
          
          <tr>
          <td colspan="2" style="text-align:center">ADD JOB POST</td>
@@ -249,7 +177,7 @@
         <tr>
          
             <td>Job Title:</td>
-             <td><input type="text"  name="j_title"> <span style="color:red"><?php if(empty($_POST['j_title'])){echo $err;}?></span></td>
+             <td><input class="inpt" type="text"  name="j_title"> <span style="color:red"><?php if(empty($_POST['j_title'])){echo $err;}?></span></td>
          
          </tr>   
          
@@ -262,7 +190,7 @@
 				
 				?>
             <td>Branch:</td>
-             <td><select name = "j_branch" >
+             <td><select class="inpt" name = "j_branch" >
 							<?php foreach($branches as $i){?>
 								<option value="<?php echo $i;?>"><?php echo $i;?></option>    <!-- branches -->
 							<?php }?>
@@ -273,36 +201,39 @@
          <tr>
          
             <td>Description:</td>
-             <td><input type="text"  name="j_description"><span style="color:red"><?php if(empty($_POST['j_description'])){echo $err;}?></span></td>
+             <td><input class="inpt" type="text"  name="j_description"><span style="color:red"><?php if(empty($_POST['j_description'])){echo $err;}?></span></td>
          
          </tr>
          
          
      </table>
-         <table>
+         <table style="margin-top:-20px;margin-left:45%;">
          
              <tr>
              
                 <td class="btn-padding">
                     <button type="submit" name="add"class="button button1">ADD</button>
                 </td>
-                 </form>
-                 <form method="post">
+                <!--
                  <td class="btn-padding">
                     <button type="submit" name="preview" class="button button1">PREVIEW</button>
-                </td>
+                </td> -->
                  
                 
              </tr>
          
          </table>
-     
+            
+            <div style="margin-top:-270px;margin-left:69%;height:450px;width:700px; ">
+         <iframe  class="iframe" src="alljobs.php" name="iframe_a"></iframe>
+         </div>
+         </form>
        
          </div>
 
      
      
-          </form>
+         
      
      
      </section> 

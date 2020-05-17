@@ -10,7 +10,12 @@ body{
     background: #000000;
     font-family: 'Roboto', sans-serif;
 }
-
+.inp {
+    
+    width: 200px;
+     border-radius: 5px;
+     border: 2px solid #adcade;
+}
 .sidebar {
 	
 margin-left: -250px;

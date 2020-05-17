@@ -25,6 +25,20 @@
 	{
 		
 	}*/
+function getAlljob($key)
+	{
+		$query ="SELECT * FROM jobpost WHERE j_title LIKE '%$key%'";
+		$jobs = get($query);
+		return $jobs;	
+	}
+
+function getAllJobs()
+	{
+		$query ="SELECT * FROM jobpost";
+		$jobs = get($query);
+		return $jobs;	
+	}
+
 	function insertMovietime()
 	{
        
